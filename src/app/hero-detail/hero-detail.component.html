@@ -1,11 +1,13 @@
 <div *ngIf="hero">
-
   <h2>{{hero.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{hero.id}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="hero.name" placeholder="name"/>
+  <div [formGroup]="heroForm">
+    <p>Id: {{hero.id}}
+    </p>
+
+    <label>Name:
+      <input formControlName="name" value="{{hero.name}}" placeholder="Name" required/>
     </label>
   </div>
-
+  <button (click)="updateHero()">Save</button>
+  <button (click)="goBack()">Go back</button>
 </div>

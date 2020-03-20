@@ -317,8 +317,13 @@
 
   <input type="hidden" #selection>
 
-  <span>GAME NAY EASY</span>
-  <app-heroes></app-heroes>
+  <span>GAME NAY EASY {{ title }}</span>
+  <nav>
+    <a routerLink="/dashboard">Dashboard</a>
+    <a routerLink="/heroes">Heroes</a>
+  </nav>
+  <router-outlet></router-outlet>
+  <app-messages></app-messages>
 
   <div class="card-container">
     <div class="card card-small" (click)="selection.value = 'component'" tabindex="0">
@@ -387,4 +392,4 @@
   </svg>
 </div>
 
-<router-outlet></router-outlet>
+
